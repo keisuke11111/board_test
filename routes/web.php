@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\BbsController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +12,17 @@ use App\Http\Controllers\BbsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('bbs',[BbsController::class,'index']);
 
+Route::post('bbs_add',[BbsController::class,'add']);
+
+Route::get('/delete/{id}',[BbsController::class,'delete']);
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('bbs',[BbsController::class,'index']);
-Route::post('bbs_add',[BbsController::class,'add']);
-Route::get('/delete/{id}',[BbsController::class,'delete']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
