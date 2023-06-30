@@ -19,7 +19,7 @@ use App\Http\Controllers\detailController;
 |
 */
 
-Route::get('bbs',[BbsController::class,'index']);
+Route::get('bbs',[BbsController::class,'index'])->name('bbs');
 Route::post('bbs_add',[BbsController::class,'add']);
 Route::get('/delete/{id}',[BbsController::class,'delete']);
 

@@ -12,17 +12,17 @@
         <div>
             <div class="header">
                 <div class="container mx-auto py-5">
-                    <a class="homebt" href="{{ route('home') }}">Telun</a>
+                    <a class="homebt" href="{{ route('user.home') }}">Telun</a>
                     @yield('box')
                     <li class = "list">
                         <ul>
-                            <a class="menubt" href="{{route('home')}}">MyPage</a>
+                            <a class="menubt" href="{{route('user.home')}}">MyPage</a>
                         </ul>
                         <ul>
-                            <a class="menubt" href="{{route('home')}}">Setting</a>
+                            <a class="menubt" href="{{route('user.home')}}">Setting</a>
                         </ul>
                         <ul>
-                            <a class="menubt" href="{{route('bbs')}}">bulletin board</a>
+                            <a class="menubt" href="{{route('user.bbs')}}">bulletin board</a>
                         </ul>
                     </li>
                 </div>
