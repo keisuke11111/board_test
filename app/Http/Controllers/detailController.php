@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class homeController extends Controller
+class detailController extends Controller
 {
     //
     public function index(){
@@ -40,7 +40,6 @@ class homeController extends Controller
                 'comment' => "学生限定！"
             ]
             ];
-       return view('home',compact('volunteer'));
+       return view('detail',compact('volunteer'));
        }
-
 }
