@@ -29,6 +29,9 @@ class DropColumnTelColumn extends Migration
     {
         Schema::table('admins', function (Blueprint $table) {
             //
+
+
+            
         });
     }
 }

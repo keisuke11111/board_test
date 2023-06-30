@@ -33,11 +33,11 @@ Route::get('/', function () {
  //   return view('boshu');
 //});
 
-Route::get('/boshu',[BoshuController::class,'index']);
-Route::get('/admin/op_home',[BoshuController::class,'index']);
+//Route::get('/boshu',[BoshuController::class,'index']);
+//Route::get('/op_home',[BoshuController::class,'index']);
 
 //Route::resource('boshu',BoshuController::class);
-Route::post('/boshu',[BoshuController::class,'store']);
+//Route::post('/boshu',[BoshuController::class,'store']);
 
 
 
@@ -58,6 +58,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth:users'])->name('dashboard');
+
 
 
 

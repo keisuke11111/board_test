@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BoshuController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,3 +82,5 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:admins')
                 ->name('logout');
+
+Route::resource('op_home',BoshuController::class);

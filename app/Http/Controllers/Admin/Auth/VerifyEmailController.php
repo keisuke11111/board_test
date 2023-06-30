@@ -28,42 +28,65 @@
 //         return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
 //     }
 // }
+// namespace App\Http\Controllers\Admin\Auth;
+
+// use App\Http\Controllers\Controller;
+// use App\Models\Admin;
+// use App\Providers\RouteServiceProvider;
+// use Illuminate\Auth\Events\Registered;
+// use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Hash;
+// use Illuminate\Validation\Rules;
+
+// class RegisteredUserController extends Controller
+// {
+//     public function create()
+//     {
+//         return view('admin.auth.register');
+//     }
+
+//     public function store(Request $request)
+//     {
+//         $request->validate([
+//             'name' => 'required|string|max:255',
+//             'email' => 'required|string|email|max:255|unique:admins',
+//             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+//         ]);
+
+//         $user = Admin::create([
+//             'name' => $request->name,
+//             'email' => $request->email,
+//             'password' => Hash::make($request->password),
+//         ]);
+
+//         event(new Registered($user));
+
+//         Auth::login($user);
+
+//         return redirect(RouteServiceProvider::ADMIN_HOME);
+//     }
+// }
+
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Auth\Events\Verified;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
-class RegisteredUserController extends Controller
+class VerifyEmailController extends Controller
 {
-    public function create()
+    public function __invoke(EmailVerificationRequest $request)
     {
-        return view('admin.auth.register');
-    }
+        if ($request->user()->hasVerifiedEmail()) {
+            return redirect()->intended(RouteServiceProvider::ADMIN_HOME.'?verified=1');
+        }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:admins',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        if ($request->user()->markEmailAsVerified()) {
+            event(new Verified($request->user()));
+        }
 
-        $user = Admin::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::ADMIN_HOME);
+        return redirect()->intended(RouteServiceProvider::ADMIN_HOME.'?verified=1');
     }
 }

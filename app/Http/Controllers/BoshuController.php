@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Recruit;
 use Illuminate\Support\Facades\Storage;
+use Recruits;
+
 class BoshuController extends Controller
 {
     /**
@@ -15,10 +17,10 @@ class BoshuController extends Controller
     public function index()
     {
         //
-         return view('boshu');
+        // return view('boshu');
        
-       // $recruits=Recruit::all();
-       // return view('op_home',compact('recruits'));
+        $recruits=Recruit::all();
+        return view('op_home',compact('recruits'));
 
 
     }
@@ -85,8 +87,11 @@ class BoshuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+
     {
         //
+        $article = Recruit::find($id);
+        return view('op_detail', compact('article'));
     }
 
     /**
@@ -110,6 +115,30 @@ class BoshuController extends Controller
     public function update(Request $request, $id)
     {
         //
+        DB::transaction(function () use ($id, $request) {
+            $article = Recruit::find($id);
+
+            $article->title = $request->input('title');
+            $article->time = $request->input('time');
+            $article->period = $request->input('period');
+            $article->money = $request->input('money');
+            $article->b_boshu = $request->input('b_boshu');
+            $article->moyori = $request->input('moyori');
+            $article->coment = $request->input('coment');
+            $article->place = $request->input('place');
+            $article->address = $request->input('address');
+            $article->human = $request->input('human');
+            $article->capacity = $request->input('capacity');
+
+            $image=$request->file('img_path');
+            $path = isset($image) ? $image->store('image', 'public') : '';
+            $article->img_path=basename($path);
+
+            $article->save();
+        });
+        // CSRFトークンを破棄
+        $request->session()->regenerateToken();
+        return redirect(route('admin.op_home.index'));   
     }
 
     /**
