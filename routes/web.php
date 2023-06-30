@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BbsController;
 use App\Http\Controllers\BoshuController;
 use App\Http\Controllers\op_homes;
+use App\Http\Controllers\homeController;
+use App\Http\Controllers\detailController;
 
 
 /*
@@ -25,6 +27,10 @@ Route::get('/delete/{id}',[BbsController::class,'delete']);
 Route::get('/', function () {
     return view('welcome');
 });
+
+//20230629 岩瀬 home,detail
+Route::get('/home', [homeController::class, 'index'])->name('home');
+Route::get('/detail',[detailController::class, 'index'])->name('detail');
 
 
 
