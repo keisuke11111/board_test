@@ -10,30 +10,6 @@
     </head>
     <body>
         <h1>掲示板</h1>
-        <form method = "POST" action = "/bbs_add">
-            @csrf
-            <div class = "usernameWrapper">
-                <div class = "form-group">
-                    <label for = "name">表示名</label>
-                    <input type = "text" id = "name" name = "name" class = "form-control username">
-                    @if (!empty($errors -> first('name')))
-                        <p class = "error_message">{{$errors -> first('name')}}</p>
-                    @endif
-                </div>
-            </div>
-            <div class = "messageWrapper">
-                <div class = "form-group">
-                    <label for = "message">メッセージ</label>
-                    <textarea name = "message" id = "messagi" class = "form-control"></textarea>
-                    @if (!empty($errors -> first('message')))
-                        <p class = "error_message">{{$errors -> first('message')}}</p>
-                    @endif
-                </div>
-            </div>
-            <div class = "btnWrapper">
-                <button type = "submit" class = "btn btn-primary">書き込む</button>
-            </div>
-        </form>
         <br>
         <div class = "bodyWrapper">
             @foreach ($bbs_data as $data)
@@ -51,8 +27,8 @@
                         <div class = "timestamp">
                             <p>{{ $data -> created_at }}</p>
                         </div>
-                        <div class = "user_delete">
-                            <button class = "btn btn-danger" onclick = "bbs_delete('{{$data -> id }}')">削除</button>
+                        <div class = "detail">
+                            <button class = "btn-blue" onclick = "detail('{{$data->id}}')">詳細</button>
                         </div>
                     </div>
                 </div>
@@ -84,14 +60,15 @@
     h1 {
         text-align : center;
     }
+
+    .btn-blue {
+        background-color : aquamarine;
+    }
 </style>
 
 <script>
-    function bbs_delete(id) {
+    function detail(id) {
         var bbs_id = id
-        if(window.confirm('削除しますか')) {
-            alert('削除しました。');
-            location.href = "/delete/" + bbs_id;
-        }
+        location.href = "/detail/" + bbs_id;
     }
 </script>
