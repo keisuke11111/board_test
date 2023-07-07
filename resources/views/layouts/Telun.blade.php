@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
         <link rel="stylesheet" href="@yield('link')" >
         <title>@yield('pageTitle') - Telun</title>
     </head>
@@ -39,11 +39,11 @@
 </html>
 
 <style>
-    /* body */
-    body{
-        margin: 0;
-        padding:0;
-    }
+/* body */
+body{
+            margin: 0;
+            padding:0;
+        }
 
     /* header */
     .header .list{
@@ -69,7 +69,7 @@
               -1px 1px 0 #FFF, 1px -1px 0 #FFF,
               0px 1px 0 #FFF,  0-1px 0 #FFF,
               -1px 0 0 #FFF, 1px 0 0 #FFF;
-        font-size: 40px;
+        font-size: 30px;
         font-family: "fantasy";
     }
 
@@ -81,9 +81,10 @@
     .menubt{
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 18px;
         font-family: "arial narrow";
         opacity:0.7;
+
     }
     .menubt:hover{
         opacity: 1;

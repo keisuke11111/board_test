@@ -11,7 +11,7 @@ class homeController extends Controller
         $volunteer = [
             [
             'id' => 1,
-            'picture' => "syasin.jpg",
+            'picture' => "mikkkun-moon.jpg",
             'title' => "がんばるぼらんてぃあ",
             'Recperi'=> "5月1日～10月10日",
             'holdperi' => "11月1日10時~11月2日16時",
@@ -26,7 +26,7 @@ class homeController extends Controller
             ],
             [
                 'id' => 2,
-                'picture' => "dekiru.jpg",
+                'picture' => "kana-100mankaino.jpg",
                 'title' => "ボランティア２",
                 'Recperi'=> "5月1日～6月10日",
                 'holdperi' => "7月1日10時~7月2日16時",

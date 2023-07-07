@@ -7,8 +7,8 @@
     @csrf
     <div class = "usernameWrapper">
         <div class = "form-group">
-            <label for = "name">表示名</label><br>
-            <input type = "text" id = "name" name = "name" class = "form-control username" placeholder="name">
+            <label for = "name">name</label><br>
+            <input type = "text" id = "name" name = "name" class = "form-control username">
             @if (!empty($errors -> first('name')))
                 <p class = "error_message">{{$errors -> first('name')}}</p>
             @endif
@@ -16,7 +16,7 @@
     </div>
     <div class = "messageWrapper">
         <div class = "form-group">
-            <label for = "message">メッセージ</label><br>
+            <label for = "message">message</label><br>
             <textarea name = "message" id = "messagi" class = "form-control"></textarea>
             @if (!empty($errors -> first('message')))
                 <p class = "error_message">{{$errors -> first('message')}}</p>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class = "btnWrapper">
-        <button type = "submit" class = "btn btn-primary">書き込む</button>
+        <button type = "submit" class = "btn btn-primary">write</button>
     </div>
     </form>
     <br>

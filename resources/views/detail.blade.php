@@ -1,6 +1,6 @@
 {{-- //////////詳細////////// --}}
 @extends("layouts.Telun")
-@section("link","{{ asset('css/home.css')}} ")
+{{-- @section("link","{{ asset('css/home.css')}} ") --}}
 @section("pageTitle","detail")
 @section("content")
     @foreach ($volunteer as $volunteer)
