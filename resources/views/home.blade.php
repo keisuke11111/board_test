@@ -24,6 +24,7 @@
                 </li>
 
             </ul>
+            <a href="{{ route('user.detail') }}">aaaa</a>
         </div>
     @endforeach
 @endsection
