@@ -34,7 +34,11 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
+<<<<<<< HEAD
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+=======
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
 }
@@ -377,6 +381,7 @@ video {
   display: none;
 }
 
+<<<<<<< HEAD
 [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -543,6 +548,8 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
+=======
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -679,9 +686,21 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
+<<<<<<< HEAD
 .mb-4 {
   margin-bottom: 1rem;
 }
+=======
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -700,6 +719,12 @@ select {
 .mr-2 {
   margin-right: 0.5rem;
 }
+<<<<<<< HEAD
+=======
+.mr-5 {
+  margin-right: 1.25rem;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -754,6 +779,12 @@ select {
 .h-8 {
   height: 2rem;
 }
+<<<<<<< HEAD
+=======
+.h-full {
+  height: 100%;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .min-h-screen {
   min-height: 100vh;
 }
@@ -772,6 +803,12 @@ select {
 .w-6 {
   width: 1.5rem;
 }
+<<<<<<< HEAD
+=======
+.w-6\/12 {
+  width: 50%;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .w-8 {
   width: 2rem;
 }
@@ -787,12 +824,27 @@ select {
 .max-w-7xl {
   max-width: 80rem;
 }
+<<<<<<< HEAD
 .flex-1 {
   flex: 1 1 0%;
 }
 .shrink-0 {
   flex-shrink: 0;
 }
+=======
+.max-w-xl {
+  max-width: 36rem;
+}
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .origin-top {
   transform-origin: top;
 }
@@ -827,12 +879,24 @@ select {
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+<<<<<<< HEAD
+=======
+.flex-row {
+  flex-direction: row;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .flex-col {
   flex-direction: column;
 }
 .items-center {
   align-items: center;
 }
+<<<<<<< HEAD
+=======
+.items-stretch {
+  align-items: stretch;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .justify-end {
   justify-content: flex-end;
 }
@@ -875,6 +939,12 @@ select {
 .border {
   border-width: 1px;
 }
+<<<<<<< HEAD
+=======
+.border-2 {
+  border-width: 2px;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .border-b {
   border-bottom-width: 1px;
 }
@@ -884,6 +954,12 @@ select {
 .border-l-4 {
   border-left-width: 4px;
 }
+<<<<<<< HEAD
+=======
+.border-r {
+  border-right-width: 1px;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .border-t {
   border-top-width: 1px;
 }
@@ -899,10 +975,24 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
+<<<<<<< HEAD
+=======
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .border-indigo-400 {
   --tw-border-opacity: 1;
   border-color: rgb(129 140 248 / var(--tw-border-opacity));
 }
+<<<<<<< HEAD
+=======
+.border-sky-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 189 248 / var(--tw-border-opacity));
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .border-transparent {
   border-color: transparent;
 }
@@ -918,6 +1008,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
 }
+<<<<<<< HEAD
+=======
+.bg-pink-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 39 119 / var(--tw-bg-opacity));
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -935,10 +1032,24 @@ select {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
+<<<<<<< HEAD
+=======
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+<<<<<<< HEAD
+=======
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -970,6 +1081,12 @@ select {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+<<<<<<< HEAD
+=======
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -998,7 +1115,11 @@ select {
   text-align: center;
 }
 .font-sans {
+<<<<<<< HEAD
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+=======
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 }
 .text-base {
   font-size: 1rem;
@@ -1029,6 +1150,12 @@ select {
 .uppercase {
   text-transform: uppercase;
 }
+<<<<<<< HEAD
+=======
+.leading-10 {
+  line-height: 2.5rem;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .leading-5 {
   line-height: 1.25rem;
 }
@@ -1038,6 +1165,12 @@ select {
 .leading-tight {
   line-height: 1.25;
 }
+<<<<<<< HEAD
+=======
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .tracking-widest {
   letter-spacing: 0.1em;
 }
@@ -1085,6 +1218,13 @@ select {
   --tw-text-opacity: 1;
   color: rgb(67 56 202 / var(--tw-text-opacity));
 }
+<<<<<<< HEAD
+=======
+.text-pink-600 {
+  --tw-text-opacity: 1;
+  color: rgb(219 39 119 / var(--tw-text-opacity));
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
@@ -1126,6 +1266,13 @@ select {
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+<<<<<<< HEAD
+=======
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .ring-1 {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1183,6 +1330,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
+<<<<<<< HEAD
+=======
+.hover\:bg-pink-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+}
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 .hover\:text-gray-400:hover {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
