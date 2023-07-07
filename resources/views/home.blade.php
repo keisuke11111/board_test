@@ -36,10 +36,6 @@
         font-size: 18px;
         margin: 10px;
     }
-    #contents{
-        /* background-color: rgb(242, 242, 242); */
-        /* box-shadow: 0 10 25px rgba(0,0,0,0.5); */
-    }
     img{
         width: 300px;
     }

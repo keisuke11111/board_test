@@ -30,7 +30,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('bbs',[BbsController::class,'index']);
+// Route::get('bbs',[BbsController::class,'index']);
+Route::get('bbs',[BbsController::class,'index'])->name('bbs');
 Route::post('bbs_add',[BbsController::class,'add']);
 Route::get('/delete/{id}',[BbsController::class,'delete']);
 
@@ -41,9 +42,12 @@ Route::get('/dashboard', function () {
 Route::get('bbs_user',[Bbs_userController::class,'index']);
 Route::get('/detail/{id}',[Bbs_userController::class,'detail']);
 
+Route::get('/home', [homeController::class, 'index'])->name('home');
+Route::get('/detail',[detailController::class, 'index'])->name('detail');
 
-Route::get('bbs_user',[Bbs_userController::class,'index']);
-Route::get('/detail/{id}',[Bbs_userController::class,'detail']);
+
+// Route::get('bbs_user',[Bbs_userController::class,'index']);
+// Route::get('/detail/{id}',[Bbs_userController::class,'detail']);
 
 
 Route::get('/', function () {

@@ -4,24 +4,15 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-<<<<<<< HEAD
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-=======
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('admin.dashboard') }}">
->>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-<<<<<<< HEAD
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-=======
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
->>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
@@ -32,11 +23,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-<<<<<<< HEAD
                             <div>{{ Auth::user()->name }}</div>
-=======
-                            <div>{{ Auth::user()->name }}
->>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -48,17 +35,10 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-<<<<<<< HEAD
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"
-=======
-                        <form method="POST" action="{{ route('admin.logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('admin.logout')"
->>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
@@ -83,11 +63,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-<<<<<<< HEAD
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-=======
-            <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
->>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
@@ -101,17 +77,10 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
-<<<<<<< HEAD
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-=======
-                <form method="POST" action="{{ route('admin.logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('admin.logout')"
->>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
@@ -120,8 +89,4 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
 </nav>
-=======
-</nav>
->>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
