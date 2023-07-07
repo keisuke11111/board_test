@@ -1,17 +1,24 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-            </div>
-        </div>
-    </div>
 </x-app-layout>
+
+<link href="{{asset('css/op_home.css')}}" rel="stylesheet">
+@foreach($recruits as $recruits)
+
+@php
+   $count=1;
+   $recruits = session('recruits');
+@endphp
+
+<div class="box11">
+<img src="{{asset('/storage/image/'.$recruits->img_path)}}"id="img_path">
+<div class="title"><a href= "{{route( 'admin.op_home.show', $recruits->id )}}">{{$recruits->title}}</a></div>
+<div class="coment"><p>{{$recruits->coment}}</p></div>
+</div>
+<p>{{$count}}</p>
+@php 
+  $count++;
+@endphp
+{{$count}}
+@endforeach

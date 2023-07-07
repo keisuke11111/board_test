@@ -28,3 +28,4 @@
 @endphp
 {{$count}}
 @endforeach
+<div class="title"><a href= "{{route( 'admin.op_home.index' )}}">新規作成</a></div>

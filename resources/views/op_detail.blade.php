@@ -1,6 +1,8 @@
 <section>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <h3 class="text-xl border-b-2 border-sky-400 pb-2 mb-10">　ボランティアの投稿</h3>
+   
+        
      <form action="{{ route( 'admin.op_home.update', $article->id )}}"method="POST" enctype="multipart/form-data">> 
         @csrf
         @method('PUT')
@@ -80,6 +82,13 @@
             </div>
         </div>
         </form>
+        <form action="{{ route('admin.op_home.destroy', $article->id) }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit"
+                    class="block w-16 text-white text-center bg-red-600 hover:bg-red-500 mr-5 px-3 py-2 rounded-md">削除</button>
+    </form>
+
         
     
    

@@ -7,7 +7,6 @@ use App\Models\Message;
 
 class BbsController extends Controller
 {
-    //
     public function index() {
         $bbs_data = Message::where('is_delete',0) -> orderBy('id','desc') -> paginate(5);
         return view('bbs',compact('bbs_data'));

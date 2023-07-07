@@ -1,3 +1,12 @@
+<form method="POST" action="{{ route('admin.logout') }}">
+  @csrf
+
+   <x-dropdown-link :href="route('admin.logout')"
+      onclick="event.preventDefault();
+      this.closest('form').submit();">
+      {{ __('Log Out') }}
+    </x-dropdown-link>
+</form>
 <section>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <h3 class="text-xl border-b-2 border-sky-400 pb-2 mb-10">　ボランティアの投稿</h3>
