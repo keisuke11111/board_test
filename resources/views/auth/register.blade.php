@@ -1,9 +1,15 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
+<<<<<<< HEAD
+            {{-- <a href="/">
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            </a> --}}
+=======
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
         </x-slot>
 
         <!-- Validation Errors -->
@@ -18,6 +24,19 @@
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
+<<<<<<< HEAD
+            <div>
+                <x-label for="tell" :value="__('電話番号')" />
+
+                <x-input id="tell" class="block mt-1 w-full" type="text" name="tell" :value="old('tell')" required autofocus />
+            </div>
+            <div>
+                <x-label for="sex" :value="__('性別')" />
+
+                <x-input id="sex" class="block mt-1 w-full" type="sex" name="sex" :value="old('sex')" required autofocus />
+            </div>
+=======
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
 
             <!-- Email Address -->
             <div class="mt-4">

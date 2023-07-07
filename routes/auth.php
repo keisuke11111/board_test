@@ -1,5 +1,7 @@
 <?php
 
+<<<<<<< HEAD
+=======
 // use App\Http\Controllers\Auth\AuthenticatedSessionController;
 // use App\Http\Controllers\Auth\ConfirmablePasswordController;
 // use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -56,7 +58,11 @@
 // });
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
+>>>>>>> 7c650058a9dcd63ae3efb6118ba610e13b5a4168
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -67,7 +73,11 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 7c650058a9dcd63ae3efb6118ba610e13b5a4168
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
@@ -112,7 +122,11 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> 7c650058a9dcd63ae3efb6118ba610e13b5a4168
 use App\Http\Controllers\BoshuController;
 
 
@@ -171,4 +185,8 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
+>>>>>>> 7c650058a9dcd63ae3efb6118ba610e13b5a4168
