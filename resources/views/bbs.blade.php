@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang = "en">
     <head>
@@ -59,10 +60,64 @@
             @endforeach
             <br>
             {{ $bbs_data -> links() }}
+=======
+@extends("layouts.Telun")
+@section("link","{{ asset('/css/bbs.css')}} ")
+@section("pageTitle","bord")
+@section("content")
+    <h1>掲示板</h1>
+    <form method = "POST" action = "/bbs_add">
+    @csrf
+    <div class = "usernameWrapper">
+        <div class = "form-group">
+            <label for = "name">name</label><br>
+            <input type = "text" id = "name" name = "name" class = "form-control username">
+            @if (!empty($errors -> first('name')))
+                <p class = "error_message">{{$errors -> first('name')}}</p>
+            @endif
+>>>>>>> iwase
         </div>
-    </body>
-</html>
-
+    </div>
+    <div class = "messageWrapper">
+        <div class = "form-group">
+            <label for = "message">message</label><br>
+            <textarea name = "message" id = "messagi" class = "form-control"></textarea>
+            @if (!empty($errors -> first('message')))
+                <p class = "error_message">{{$errors -> first('message')}}</p>
+            @endif
+        </div>
+    </div>
+    <div class = "btnWrapper">
+        <button type = "submit" class = "btn btn-primary">write</button>
+    </div>
+    </form>
+    <br>
+    <div class = "bodyWrapper">
+        @foreach ($bbs_data as $data)
+        <div class = "messageRow">
+            <div class = "message">
+                <div class = "user_id">
+                    <p>NO.{{ $data -> id }}</p>
+                </div>
+                <div class = "user_name">
+                    <p>NAME ：{{ $data -> view_name }}</p>
+                </div>
+                <div class = "user_message">
+                    <p>{{ $data -> message }}</p>
+                </div>
+                <div class = "timestamp">
+                    <p>{{ $data -> created_at }}</p>
+                </div>
+                <div class = "user_delete">
+                    <button class = "btn btn-danger" onclick = "bbs_delete('{{$data -> id }}')">削除</button>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        <br>
+        {{ $bbs_data -> links() }}
+    </div>
+@endsection
 <style>
     .message {
         padding: 0.5em 1em;
@@ -72,7 +127,12 @@
         border-top: solid 5px #5d627b;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
     }
+    textarea {
+        width: 80%;
+        height: 100px;
+    }
 
+<<<<<<< HEAD
     .board {
         text-align : center;
     }
@@ -83,6 +143,14 @@
 
     h1 {
         text-align : center;
+=======
+    /* .message p {
+        margin: 0;
+        padding: 0;
+    } */
+    #name{
+        width: 80%;
+>>>>>>> iwase
     }
 </style>
 
