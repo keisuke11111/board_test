@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang = "en">
     <head>
@@ -60,7 +59,6 @@
             @endforeach
             <br>
             {{ $bbs_data -> links() }}
-=======
 @extends("layouts.Telun")
 @section("link","{{ asset('/css/bbs.css')}} ")
 @section("pageTitle","bord")
@@ -75,7 +73,6 @@
             @if (!empty($errors -> first('name')))
                 <p class = "error_message">{{$errors -> first('name')}}</p>
             @endif
->>>>>>> iwase
         </div>
     </div>
     <div class = "messageWrapper">
@@ -132,7 +129,6 @@
         height: 100px;
     }
 
-<<<<<<< HEAD
     .board {
         text-align : center;
     }
@@ -143,14 +139,13 @@
 
     h1 {
         text-align : center;
-=======
     /* .message p {
         margin: 0;
         padding: 0;
-    } */
+        */
+    } 
     #name{
         width: 80%;
->>>>>>> iwase
     }
 </style>
 
