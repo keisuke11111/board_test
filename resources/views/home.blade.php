@@ -9,27 +9,47 @@
 @section("content")
     @foreach ($volunteer as $volunteer)
         <div id = "contents">
-            <h2>{{$volunteer['title']}}</h2>
-            <ul>
-                <li>
+            <h2>
+                {{-- ,['id' => '$volunteer['id']'] --}}
+                <a href={{ route('user.detail') }} >{{$volunteer['title']}}</a>
+            </h2>
+            <div id="image">
                     <img src="image\{{$volunteer['picture']}}" alt="ボランティア写真">
-                </li>
-                <li>
+                </div>
+                <div id="recepi">
                     <p id="tag">募集期間</p>
                     {{$volunteer['Recperi']}}
-                </li>
-                <li>
+                </div>
+                <div>
                     <p id="tag">開催期間</p>
                     {{$volunteer['holdperi']}}
-                </li>
-
-            </ul>
-            <a href="{{ route('user.detail') }}">aaaa</a>
+                </div>
         </div>
     @endforeach
 @endsection
+
+
 <style>
-    li{
+    a{
+        text-decoration: none;
+        color:inherit;
+        position: relative;
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
+    }
+    a::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+    }
+    h2{
+        display-inline: block;
+    }
+     li{
         list-style: none;
     }
     #tag{
@@ -37,11 +57,24 @@
         margin: 10px;
     }
     #contents{
-        /* background-color: rgb(242, 242, 242); */
-        /* box-shadow: 0 10 25px rgba(0,0,0,0.5); */
+        background-color: #f8f8f8;
+        /* 320*450 */
+        width: 320px;
+        height: 450px;
+        border-radius: 5px;
+    }
+    #contents:hover{
+        opacity: 0.7;
     }
     img{
         width: 300px;
+        height: 200px;
+        object-fit: cover;
+    }
+    #contents{
+        margin: 10px;
+        padding: 10px;
+        float: left;
     }
 
 
