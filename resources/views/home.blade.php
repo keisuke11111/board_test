@@ -7,23 +7,24 @@
 
 @endsection
 @section("content")
-    @foreach ($volunteer as $volunteer)
+    @foreach ($recruits as $recruits)
         <div id = "contents">
-            <h2>
-                {{-- ,['id' => '$volunteer['id']'] --}}
-                <a href={{ route('user.detail') }} >{{$volunteer['title']}}</a>
-            </h2>
-            <div id="image">
+            <h2>{{$volunteer['title']}}</h2>
+            <ul>
+                <li>
                     <img src="image\{{$volunteer['picture']}}" alt="ボランティア写真">
-                </div>
-                <div id="recepi">
+                </li>
+                <li>
                     <p id="tag">募集期間</p>
                     {{$volunteer['Recperi']}}
-                </div>
-                <div>
+                </li>
+                <li>
                     <p id="tag">開催期間</p>
                     {{$volunteer['holdperi']}}
-                </div>
+                </li>
+
+            </ul>
+            <a href="{{ route('user.detail') }}">aaaa</a>
         </div>
     @endforeach
 @endsection
