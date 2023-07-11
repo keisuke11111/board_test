@@ -7,7 +7,7 @@
 
 @endsection
 @section("content")
-    @foreach ($volunteer as $volunteer)
+    @foreach ($recruits as $recruits)
         <div id = "contents">
             <h2>
                 {{-- ,['id' => '$volunteer['id']'] --}}
