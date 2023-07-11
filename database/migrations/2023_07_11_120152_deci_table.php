@@ -13,7 +13,7 @@ class DeciTable extends Migration
      */
     public function up()
     {
-        Schema::create('=deci', function (Blueprint $table) {
+        Schema::create('deci', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
