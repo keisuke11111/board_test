@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Recruit;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use Recruits;
-class homeController extends Controller
+
+class JoinController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +14,8 @@ class homeController extends Controller
     public function index()
     {
         //
+       // return view('join',compact($id));
 
-        $recruits=Recruit::all();
-        return view('welcome',compact('recruits'));
 
     }
 
@@ -53,16 +48,9 @@ class homeController extends Controller
      */
     public function show($id)
     {
-     
-        
-        session()->put('join_id', $id);
-        $joinId = session()->get('join_id');
-        $teer = Recruit::find($id);
-        
-        
-        return view('detail', compact('teer'));
+        //
+        return view('join',compact($id));
 
-        
     }
 
     /**

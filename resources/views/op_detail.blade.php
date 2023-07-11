@@ -3,7 +3,7 @@
     <h3 class="text-xl border-b-2 border-sky-400 pb-2 mb-10">　ボランティアの投稿</h3>
    
         
-     <form action="{{ route( 'admin.op_home.update', $article->id )}}"method="POST" enctype="multipart/form-data">> 
+     <form action="{{ route( 'admin.op_home.update', $article->id )}}"method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="flex justify-between items-stretch mb-5">
@@ -75,19 +75,31 @@
                          fileData.readAsDataURL(hoge.files[0]);
                     }
             </script>
+            
     
 
-                <button type="submit" class="text-white text-center leading-10 bg-pink-600 px-10 hover:bg-pink-500 rounded-md">編集</button>
             </div>
+            
             </div>
         </div>
-        </form>
-        <form action="{{ route('admin.op_home.destroy', $article->id) }}" method="POST">
+
+    <div class="flex justify-end">
+        <a href="{{Route('user.hope.show',$article->id)}}" class="block w-24 h-10 text-white text-center bg-pink-500 hover:bg-pink-400 mr-5 px-3 py-2 rounded-md">参加希望</a>
+        <button type="submit" class="block w-24 h-10 text-white text-center bg-yellow-400 hover:bg-yellow-400 mr-5 px-3 py-2 rounded-md">編集</button>
+       
+    </form>
+        <!-- <form action="{{ route('admin.op_home.destroy', $article->id) }}" method="POST">
                 @method('DELETE')
                 @csrf
                 <button type="submit"
-                    class="block w-16 text-white text-center bg-red-600 hover:bg-red-500 mr-5 px-3 py-2 rounded-md">削除</button>
-    </form>
+                class="block w-20 text-white text-center bg-red-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md" >削除</button>
+         </form> -->
+         <form action="{{ route('admin.op_home.destroy', $article->id) }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit"class="block w-20 h-10 text-white text-center bg-red-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md  " >削除</button>
+         </form>
+    </div>
 
         
     

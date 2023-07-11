@@ -31,8 +31,22 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+       
+        
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (session()->has('join_id')) {
+            $joinId = session()->get('join_id');
+            //return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->to('/show/'.$joinId);
+
+        }else{
+            
+            return redirect()->to('/');
+        }
+
+
+
+       
     }
 
     /**

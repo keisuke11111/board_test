@@ -2,9 +2,7 @@
     <x-auth-card>
         運営者
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            
         </x-slot>
 
         <!-- Session Status -->
@@ -40,6 +38,8 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
+           
+                
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('admin.password.request'))
@@ -48,10 +48,13 @@
                     </a>
                 @endif
 
+               
+
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
             </div>
+            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('admin.register') }}">{{ __('新規登録がまだの方') }}</a>
         </form>
     </x-auth-card>
 </x-guest-layout>

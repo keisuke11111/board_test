@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Join;
+use Illuminate\Support\Facades\Auth;
+use App\Events\Joined;
+
 
 use Illuminate\Http\Request;
-use App\Models\Recruit;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use Recruits;
-class homeController extends Controller
+
+class JoinController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,14 +18,23 @@ class homeController extends Controller
     public function index()
     {
         //
+        $user_id = Auth::user();
+       
+        //$user= $user_id->id;
+        if (empty($user_id)) {
+             return view('auth/login');
 
-        $recruits=Recruit::all();
-        return view('welcome',compact('recruits'));
+         }else{
+             return view('join');
+         }
+       // return view('join');
 
+
+       
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource
      *
      * @return \Illuminate\Http\Response
      */
@@ -43,6 +52,38 @@ class homeController extends Controller
     public function store(Request $request)
     {
         //
+        
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
+        //     'tel' => 'required|integer|max:25',
+        //     'email' => 'required|string|email|max:255|',
+        //     'sex' => 'required',
+        // ]);
+
+        
+
+       
+        $user = Auth('users')->user()->id;
+    
+
+        
+
+        $joinId = session()->get('join_id');
+        $join = new Join();
+        $join->join_id=$joinId;
+        $join->user_id=$user;
+        $join->sex=$request->input(['sex']);
+        $join->tel=$request->input(['tel']);
+        $join->email=$request->input(['email']);
+        $join->name=$request->input(['name']);
+        $join->qu=$request->input(['text']);
+        $join->save();
+
+        event(new Joined($join));
+        return('welcome');
+      
+
+
     }
 
     /**
@@ -53,16 +94,8 @@ class homeController extends Controller
      */
     public function show($id)
     {
-     
-        
-        session()->put('join_id', $id);
-        $joinId = session()->get('join_id');
-        $teer = Recruit::find($id);
-        
-        
-        return view('detail', compact('teer'));
-
-        
+        //
+       
     }
 
     /**

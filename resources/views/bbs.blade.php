@@ -59,10 +59,10 @@
             @endforeach
             <br>
             {{ $bbs_data -> links() }}
-<!-- @extends("layouts.Telun")
+@extends("layouts.Telun")
 @section("link","{{ asset('/css/bbs.css')}} ")
 @section("pageTitle","bord")
-@section("content") -->
+@section("content")
     <h1>掲示板</h1>
     <form method = "POST" action = "/bbs_add">
     @csrf

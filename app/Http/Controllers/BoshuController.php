@@ -51,8 +51,9 @@ class BoshuController extends Controller
         //$user = Auth::user();
         // $user_id = Auth::id();
         $user = Auth('admins')->user()->id;
+       // $user = Auth::guard('admins')->id();
         // ddd($request);
-        //$user = Auth::user()->id;
+        // $user = Auth::user('admins')->id;
         // !--ddd($request->hasFile('img_path'));
         $image=$request->file('img_path');
         $path = isset($image) ? $image->store('image', 'public') : '';

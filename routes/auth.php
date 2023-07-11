@@ -67,6 +67,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\JoinController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -173,5 +174,8 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:users')
                 ->name('logout');
+
+
+// Route::get('/join/show', [JoinController::class, 'index']);
 
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BoshuController;
+use App\Http\Controllers\Join2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +85,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 
 Route::resource('op_home',BoshuController::class);
+
+Route::resource('join2',Join2Controller::class);
+
+
