@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DeciTable extends Migration
+class AddSTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class DeciTable extends Migration
      */
     public function up()
     {
-        Schema::create('deci', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('deci', function (Blueprint $table) {
+            $table->timestamp('updated_at')->nullable();
+        
         });
     }
 
@@ -26,6 +26,8 @@ class DeciTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('=deci');
+        Schema::table('deci', function (Blueprint $table) {
+            //
+        });
     }
 }

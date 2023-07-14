@@ -9,6 +9,14 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\detailController;
 use App\Http\Controllers\JoinController;
 use App\Http\Controllers\HopeController;
+use App\Http\Controllers\InfoController;
+use App\Http\Controllers\deciController;
+use App\Http\Controllers\PointController;
+use App\Http\Controllers\UserjoinController;
+use App\Http\Controllers\UserinfoController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +34,7 @@ Route::post('bbs_add',[BbsController::class,'add']);
 Route::get('/delete/{id}',[BbsController::class,'delete']);
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 // Route::get('bbs',[BbsController::class,'index']);
 Route::get('bbs',[BbsController::class,'index'])->name('bbs');
@@ -57,14 +63,25 @@ Route::resource('hope',HopeController::class);
 // });
 
 Route::get('/op_join',[op_homes::class, 'join2']);
+Route::get('/example/{user_id}/{join_id}',[op_homes::class,'join2'])->name('example');
+Route::get('/deci/{id}',[op_homes::class,'deci'])->name('op_homes.deci');
+//Route::get('info}',[op_homes::class,'info'])->name('info');
+Route::resource('Info',InfoController::class);
+Route::get('/deci/{user_id}/{created_at}',[deciController::class,'info'])->name('deci.info');
 
 // Route::get('bbs_user',[Bbs_userController::class,'index']);
 // Route::get('/detail/{id}',[Bbs_userController::class,'detail']);
+Route::post('points/{user_id}/{join_id}', [PointController::class, 'store'])->name('point.store');
+Route::get('/Userjoin/{id}',[UserjoinController::class,'index'])->name('userjoin.index');
+Route::get('/Userjoin2/',[UserjoinController::class,'store'])->name('userjoin.store');
+Route::resource('userinfo',UserinfoController::class);
+Route::get('/Userjoi',[UserjoinController::class,'usershow'])->name('userjoin.usershow');
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
+ Route::get('/auth/login.blade.php', function () {
+     return view('/auth/login');
+ });
 
  Route::get('/dashboard', function () {
      return view('dashboard');
@@ -74,6 +91,7 @@ Route::get('/op_join',[op_homes::class, 'join2']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth:users'])->name('dashboard');
+
 
 
 

@@ -1,3 +1,5 @@
+@extends("layouts.op_telun")
+@section("content")
 <section>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <h3 class="text-xl border-b-2 border-sky-400 pb-2 mb-10">　ボランティアの投稿</h3>
@@ -84,7 +86,7 @@
         </div>
 
     <div class="flex justify-end">
-        <a href="{{Route('user.hope.show',$article->id)}}" class="block w-24 h-10 text-white text-center bg-pink-500 hover:bg-pink-400 mr-5 px-3 py-2 rounded-md">参加希望</a>
+        <a href="{{route('user.op_homes.deci',['id' => $article->id])}}" class="block w-24 h-10 text-white text-center bg-pink-500 hover:bg-pink-400 mr-5 px-3 py-2 rounded-md">参加者</a>
         <button type="submit" class="block w-24 h-10 text-white text-center bg-yellow-400 hover:bg-yellow-400 mr-5 px-3 py-2 rounded-md">編集</button>
        
     </form>
@@ -92,7 +94,7 @@
                 @method('DELETE')
                 @csrf
                 <button type="submit"
-                class="block w-20 text-white text-center bg-red-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md" >削除</button>
+                class="block w-20 .text-white text-center bg-red-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md" >削除</button>
          </form> -->
          <form action="{{ route('admin.op_home.destroy', $article->id) }}" method="POST">
                 @method('DELETE')
@@ -106,3 +108,4 @@
    
 
 </section>
+@endsection

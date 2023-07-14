@@ -4,12 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\Deci;
+use App\Models\Recruit;
+
+
+use Illuminate\Support\Facades\Auth;
+
 
 class BbsController extends Controller
 {
     public function index() {
-        $bbs_data = Message::where('is_delete',0) -> orderBy('id','desc') -> paginate(5);
-        return view('bbs',compact('bbs_data'));
+        $user_id = Auth::user();
+       
+        $user= $user_id->id;
+        if (empty($user_id)) {
+             return view('auth/login');
+
+         }else{
+            $deci=Deci::where('user_id','=',$user)->value('join_id');
+            $user_join=Recruit::where('id','=',$deci)->get();
+            return view ('user_join',compact('user_join'));
+
+         }
+
+        
     }
 
     public function add(Request $request) {

@@ -3,12 +3,21 @@
 <x-guest-layout>
     <x-auth-card>
     <x-slot name="logo">
+    <div>
+                <x-label for="name" :value="__('タイトル')" />
+            @foreach($rec as $rec)
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{$rec->title}}" required autofocus />
+            </div>
     </x-slot>
-    <form action="" enctype="multipart/form-data" method="post">
+    @foreach ($join as $join )
+    <form action="{{route('user.hope.store',['user_id' => $join->user_id, 'join_id' => $rec->id,'id' => $join->id])}}" enctype="multipart/form-data" method="post">
+    @endforeach
             @csrf
-            @foreach ($join as $join )
+           
 
             <!-- Name -->
+           
+            
             <div>
                 <x-label for="name" :value="__('名前')" />
 
@@ -37,15 +46,15 @@
             <div class="mt-4">
                 <x-label for="text" :value="__('質問やコメント')" />
 
-                <textarea id="text" class="block mt-1 w-full"  name="text" value="" required> </textarea>
+                <textarea id="text" class="block mt-1 w-full"  name="text" value="{{$join->qu}}" required> </textarea>
             </div>
 
             <div class="flex items-center justify-end mt-4">
        
-            <button type="submit"class="block w-20 h-10 text-white text-center bg-red-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md  " >決定</button>
-            </form>
-            <button type="submit"class="block w-20 h-10 text-white text-center bg-sky-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md  " >お見送り</button>
-            </div>
+            <button type="submit"class="block w-20 h-10 text-white text-center bg-red-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md " name="jug"value="1" >決定</button>
+            
+           <button type="submit"class="block w-20 h-10 text-white text-center bg-sky-500 hover:bg-sky-400 mr-5 px-3 py-2 rounded-md " name="jug" value="0" >削除</button>
+            
           @endforeach
        
         

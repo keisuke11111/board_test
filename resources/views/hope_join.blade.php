@@ -1,4 +1,4 @@
-@extends("layouts.Telun")
+@extends("layouts.op_telun")
 @section("content")
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -10,7 +10,7 @@
     </tr>
     @foreach($joins as $joins)
     <tr>
-      <td><a href="{{route('admin.join2.show',$joins->user_id)}}">{{$joins->name}}</a></td>
+      <td><a href="{{route('user.example',['user_id' => $joins->user_id, 'join_id' => $joins->join_id])}}">{{$joins->name}}</a></td>
       <td>{{$joins->created_at}}</td>
     </tr>
     @endforeach 

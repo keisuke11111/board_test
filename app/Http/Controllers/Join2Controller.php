@@ -1,10 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Events\MessageCreated;
 
 use Illuminate\Http\Request;
 use App\Models\Join;
+use App\Models\Deci;
+use APP\Models\Recruit;
+use APP\Models\Messages2;
 
+use Recruits;
 
 class Join2Controller extends Controller
 {
@@ -37,9 +42,14 @@ class Join2Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
         //
+       
+
+
+
+
     }
 
     /**
@@ -48,17 +58,18 @@ class Join2Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($user_id)
+    public function show($user_id,$join_id)
     {
         //
     
         //$join = Join::find($user_id);
         
         $join=Join::where('user_id','=',$user_id)->get();
+        $rec=Recruit::where('id','=',$join_id)->get();
     
 
     
-        return view('detail2',compact('join'));
+        return view('detail2',compact('join','rec'));
     
 
 
@@ -97,4 +108,5 @@ class Join2Controller extends Controller
     {
         //
     }
+    
 }

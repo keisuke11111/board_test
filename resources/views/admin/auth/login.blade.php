@@ -1,4 +1,6 @@
 <x-guest-layout>
+@extends("......layouts.Telun")
+@section("content")
     <x-auth-card>
         運営者
         <x-slot name="logo">
@@ -44,7 +46,7 @@
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('admin.password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('admin.password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('パスワードを忘れた方') }}
                     </a>
                 @endif
 
@@ -56,5 +58,7 @@
             </div>
             <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('admin.register') }}">{{ __('新規登録がまだの方') }}</a>
         </form>
+        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('user.login') }}">{{ __('個人として') }}</a>
     </x-auth-card>
+    @endsection
 </x-guest-layout>

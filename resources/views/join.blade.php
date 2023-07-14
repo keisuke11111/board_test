@@ -8,6 +8,7 @@
             @csrf
 
             <!-- Name -->
+            
             <div>
                 <x-label for="name" :value="__('名前')" />
 

@@ -16,13 +16,13 @@
                     @yield('box')
                     <li class = "list">
                         <ul>
-                            <a class="menubt" href="{{route('user.home')}}">MyPage</a>
+                            <a class="menubt" href="{{route('user.userjoin.usershow')}}">MyPage</a>
                         </ul>
                         <ul>
-                            <a class="menubt" href="{{route('user.home')}}">Setting</a>
+                            <a class="menubt" href="/login">ログイン</a>
                         </ul>
                         <ul>
-                            <a class="menubt" href="{{route('user.bbs')}}">bulletin board</a>
+                            <a class="menubt" href="{{route('user.bbs')}}">参加予定</a>
                         </ul>
                     </li>
                 </div>
