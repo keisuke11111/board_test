@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\Auth;
 
 class BbsController extends Controller
 {
+    //
     public function index() {
         $user_id = Auth::user();
        
-        $user= $user_id->id;
+       
         if (empty($user_id)) {
              return view('auth/login');
 
          }else{
+            $user= $user_id->id;
             $deci=Deci::where('user_id','=',$user)->value('join_id');
             $user_join=Recruit::where('id','=',$deci)->get();
             return view ('user_join',compact('user_join'));

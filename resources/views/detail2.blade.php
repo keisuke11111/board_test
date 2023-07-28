@@ -6,7 +6,7 @@
     <div>
                 <x-label for="name" :value="__('タイトル')" />
             @foreach($rec as $rec)
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{$rec->title}}" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{$rec->title}}" required autofocus  readonly />
             </div>
     </x-slot>
     @foreach ($join as $join )
@@ -21,18 +21,18 @@
             <div>
                 <x-label for="name" :value="__('名前')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{$join->name}}" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{$join->name}}" required autofocus  readonly/>
             </div>
 
             <div>
                 <x-label for="tel" :value="__('電話番号')" />
 
-                <x-input id="tel" class="block mt-1 w-full" type="text" name="tel" value="{{$join->tel}}" required autofocus />
+                <x-input id="tel" class="block mt-1 w-full" type="text" name="tel" value="{{$join->tel}}" required autofocus  readonly />
             </div>
             <div>
                 <x-label for="sex" :value="__('性別')" />
 
-                <x-input id="sex" class="block mt-1 w-full" type="sex" name="sex" value="{{$join->sex}}" required autofocus />
+                <x-input id="sex" class="block mt-1 w-full" type="sex" name="sex" value="{{$join->sex}}" required autofocus  readonly/>
             </div>
 
 
@@ -40,13 +40,13 @@
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" value="{{$join->email}}" required />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" value="{{$join->email}}" required  readonly />
             </div>
 
             <div class="mt-4">
                 <x-label for="text" :value="__('質問やコメント')" />
 
-                <textarea id="text" class="block mt-1 w-full"  name="text" value="{{$join->qu}}" required> </textarea>
+                <textarea id="text" class="block mt-1 w-full"  name="text" value="{{$join->qu}}" required  readonly> </textarea>
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -54,9 +54,13 @@
             <button type="submit"class="block w-20 h-10 text-white text-center bg-red-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md " name="jug"value="1" >決定</button>
             
            <button type="submit"class="block w-20 h-10 text-white text-center bg-sky-500 hover:bg-sky-400 mr-5 px-3 py-2 rounded-md " name="jug" value="0" >削除</button>
-            
+        </form>  
+
+        <form action="{{route('user.userinfo.show',['userinfo' => $join->user_id])}}">
+        <button type="submit"class="block w-20 h-10 text-white text-center bg-yellow-400 hover:bg-yellow-300 mr-5 px-3 py-2 rounded-md " name="jug">履歴</button>
+        </form>  
           @endforeach
-       
+
         
     </x-auth-card>
 </x-guest-layout>

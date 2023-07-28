@@ -16,13 +16,13 @@
                     @yield('box')
                     <li class = "list">
                         <ul>
-                            <a class="menubt" href="{{route('user.home')}}">新規作成</a>
+                            <a class="menubt" href="{{route('admin.op_home.index')}}">新規作成</a>
                         </ul>
                         <ul>
                             <a class="menubt" href="{{('/admin/join2')}}">申込者</a>
                         </ul>
                         <ul>
-                            <a class="menubt" href="{{route('user.bbs')}}">bulletin board</a>
+                            <a class="menubt" href="{{route('admin.logout')}}">logout</a>
                         </ul>
                     </li>
                 </div>
@@ -100,3 +100,4 @@ body{
         margin: 4%;
     }
 </style>
+

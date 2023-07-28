@@ -62,7 +62,7 @@
                             sex: $("#sex").val(),
                             name: $("#name").val(),
                             tel: $("#tel").val(),
-                            email: $("#text").val()
+                            email: $("#email").val()
                         }
                     
            });

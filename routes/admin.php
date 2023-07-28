@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BoshuController;
 use App\Http\Controllers\Join2Controller;
+use App\Http\Controllers\op_homes;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +26,15 @@ use App\Http\Controllers\Join2Controller;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.welcome');
-});
+// Route::get('/', function () {
+//     return view('admin.welcome');
+// });
+//Route::get('/admin/',[op_homes::class,'adminlogin']);
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth:admins'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('admin.dashboard');
+// })->middleware(['auth:admins'])->name('dashboard');
+Route::get('/dashboard',[op_homes::class,'adminlogin']);
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
@@ -80,12 +85,9 @@ Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])
 Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store'])
                 ->middleware('auth:admins');
 
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:admins')
                 ->name('logout');
 
 Route::resource('op_home',BoshuController::class);
-
 Route::resource('join2',Join2Controller::class);
-
-

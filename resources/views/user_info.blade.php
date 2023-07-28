@@ -35,6 +35,8 @@
                             <div class="flex">
                                 <button type="submit" class="block w-20 h-10 text-white text-center bg-red-500 hover:bg-red-400 mr-5 px-3 py-2 rounded-md" name="jug" value="1">変更</button>
                                 <a href="{{route('user.userinfo.show',['userinfo' => $user_info->id])}}" class="block w-24 h-10 text-white text-center bg-yellow-500 hover:bg-yellow-400 mr-5 px-3 py-2 rounded-md">履歴</a>
+                                <a href="{{ route('user.home') }}" class="block w-24 h-10 text-white text-center bg-blue-500 hover:bg-blue-400 mr-5 px-3 py-2 rounded-md">戻る</a>
+
                             </div>
                         </form>
                         @endforeach

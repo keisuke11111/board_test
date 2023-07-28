@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Recruit;
-use Encore\Admin\Facades\Admin;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Recruits;
-
+use Illuminate\Support\Facades\Auth;
 
 class BoshuController extends Controller
 {
@@ -22,8 +20,8 @@ class BoshuController extends Controller
         //
          return view('boshu');
        
-        //$recruits=Recruit::all();
-        //return view('op_home',compact('recruits'));
+        // $recruits=Recruit::all();
+        // return view('op_home',compact('recruits'));
 
 
     }
@@ -48,19 +46,28 @@ class BoshuController extends Controller
     public function store(Request $request)
     {
         //
-        //$user = Auth::user();
-        // $user_id = Auth::id();
-        $user = Auth('admins')->user()->id;
-       // $user = Auth::guard('admins')->id();
-        // ddd($request);
-        // $user = Auth::user('admins')->id;
         // !--ddd($request->hasFile('img_path'));
         $image=$request->file('img_path');
         $path = isset($image) ? $image->store('image', 'public') : '';
        // $image_path = $request->file('img_path')->store('public/images/');
         
+
+
+ //
+        //$user = Auth::user();
+        // $user_id = Auth::id();
+        //$user = Auth('admins')->user()->id;
+       // $user = Auth::guard('admins')->id();
+        // ddd($request);
+        // $user = Auth::user('admins')->id;
+        // !--ddd($request->hasFile('img_path'));
+        $user= Auth('admins')->user()->id;
+        $image=$request->file('img_path');
+        $path = isset($image) ? $image->store('image', 'public') : '';
+       // $image_path = $request->file('img_path')->store('public/images/');
+        
         $recruit = new Recruit();
-        $recruit->op_id=$user;
+        $recruit->op_id=$user;       
         $recruit->title=$request->input(['title']);
         $recruit->period=$request->input(['period']);
         $recruit->time=$request->input(['time']);
@@ -126,10 +133,6 @@ class BoshuController extends Controller
         DB::transaction(function () use ($id, $request) {
             $article = Recruit::find($id);
 
-            if(empty($request->img_path)) {
-                $article->img_path = $article->img_path;
-            }
-
             $article->title = $request->input('title');
             $article->time = $request->input('time');
             $article->period = $request->input('period');
@@ -141,12 +144,10 @@ class BoshuController extends Controller
             $article->address = $request->input('address');
             $article->human = $request->input('human');
             $article->capacity = $request->input('capacity');
+
             $image=$request->file('img_path');
-            if(isset($image)){
-            
             $path = isset($image) ? $image->store('image', 'public') : '';
             $article->img_path=basename($path);
-            }
 
             $article->save();
         });
@@ -164,10 +165,5 @@ class BoshuController extends Controller
     public function destroy($id)
     {
         //
-
-        DB::transaction(function () use ($id) {
-            Recruit::destroy($id);    //テーブルの内容を変更する処理
-        });
-        return redirect('/op_home/');    //一覧表示にリダイレクト
     }
 }

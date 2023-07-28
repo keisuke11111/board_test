@@ -1,5 +1,7 @@
-
+{{-- //////////詳細////////// --}}
 @extends("layouts.Telun")
+{{-- @section("link","{{ asset('css/home.css')}} ") --}}
+@section("pageTitle","detail")
 @section("content")
 <form method="POST" action="{{ route('user.logout') }}">
   @csrf

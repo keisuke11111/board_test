@@ -1,16 +1,7 @@
-<form method="POST" action="{{ route('admin.logout') }}">
-  @csrf
-
-   <x-dropdown-link :href="route('admin.logout')"
-      onclick="event.preventDefault();
-      this.closest('form').submit();">
-      {{ __('Log Out') }}
-    </x-dropdown-link>
-</form>
 <section>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <h3 class="text-xl border-b-2 border-sky-400 pb-2 mb-10">　ボランティアの投稿</h3>
-     <form action="{{route('admin.op_home.store')}}" enctype="multipart/form-data" method="post"> 
+     <form action="/boshu" enctype="multipart/form-data" method="post"> 
         @csrf
         <div class="flex justify-between items-stretch mb-5">
             <div class="flex flex-col w-6/12 mr-5">

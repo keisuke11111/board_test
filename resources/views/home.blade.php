@@ -1,15 +1,14 @@
-
 @extends("layouts.Telun")
 {{-- @section("link","{{ asset('css/home.css')}} ") --}}
 @section("pageTitle","home")
 @section("box")
 
-        <title>Laravel</title>
+{{-- action="{{ asset('css/home.css')}}" --}}
 
 @endsection
 @section("content")
     @foreach ($recruits as $recruits)
-        <div id = "contents">
+    <div id = "contents">
             <h2>{{$recruits['title']}}</h2>
             <ul>
                 <li>
@@ -66,9 +65,6 @@
         width: 320px;
         height: 450px;
         border-radius: 5px;
-        margin: 10px;
-        padding: 10px;
-        float: left;
     }
     #contents:hover{
         opacity: 0.7;
@@ -78,7 +74,11 @@
         height: 200px;
         object-fit: cover;
     }
-   
+    #contents{
+        margin: 10px;
+        padding: 10px;
+        float: left;
+    }
 
 
 </style>

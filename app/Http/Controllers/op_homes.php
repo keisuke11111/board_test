@@ -27,6 +27,16 @@ class op_homes extends Controller
         $deci=Deci::Where('join_id','=',$id)->where('jug','=',1)->get();
         return view ('deci',compact('deci'));
     }
+
+    public function adminlogin(){
+        $adminid= Auth('admins')->user()->id;
+
+        $recruits=Recruit::Where('op_id','=',$adminid)->get();
+        return view('admin/welcome',compact('recruits'));
+
+
+
+    }
   
 
     

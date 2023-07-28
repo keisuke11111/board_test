@@ -24,6 +24,10 @@
                         <ul>
                             <a class="menubt" href="{{route('user.bbs')}}">参加予定</a>
                         </ul>
+                        <ul>
+                            <a class="menubt" href="{{route('user.logout')}}">logout</a>
+                            
+                        </ul>
                     </li>
                 </div>
             </div>
@@ -100,3 +104,5 @@ body{
         margin: 4%;
     }
 </style>
+
+

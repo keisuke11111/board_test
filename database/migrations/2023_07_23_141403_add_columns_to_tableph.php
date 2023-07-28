@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RemoveColumnFromTable extends Migration
+class AddColumnsToTableph extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class RemoveColumnFromTable extends Migration
      */
     public function up()
     {
-        Schema::table('joins', function (Blueprint $table) {
+        Schema::table('tableph', function (Blueprint $table) {
             //
-            $table->dropColumn('qu');
         });
     }
 
@@ -26,7 +25,7 @@ class RemoveColumnFromTable extends Migration
      */
     public function down()
     {
-        Schema::table('joins', function (Blueprint $table) {
+        Schema::table('tableph', function (Blueprint $table) {
             //
         });
     }

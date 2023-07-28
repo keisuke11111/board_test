@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BbsController;
-use App\Http\Controllers\Bbs_userController;
 use App\Http\Controllers\BoshuController;
 use App\Http\Controllers\op_homes;
 use App\Http\Controllers\homeController;
@@ -14,8 +13,7 @@ use App\Http\Controllers\deciController;
 use App\Http\Controllers\PointController;
 use App\Http\Controllers\UserjoinController;
 use App\Http\Controllers\UserinfoController;
-
-
+use App\Http\Controllers\Join2Controller;
 
 
 /*
@@ -36,17 +34,29 @@ Route::get('/delete/{id}',[BbsController::class,'delete']);
 
 
 
-// Route::get('bbs',[BbsController::class,'index']);
-Route::get('bbs',[BbsController::class,'index'])->name('bbs');
-Route::post('bbs_add',[BbsController::class,'add']);
-Route::get('/delete/{id}',[BbsController::class,'delete']);
+//20230629 岩瀬 home,detail
+
+Route::get('/detail',[detailController::class, 'index'])->name('detail');
+
+
+
+
+//Route::get('/boshu', function () {
+ //   return view('boshu');
+//});
+
+//Route::get('/boshu',[BoshuController::class,'index']);
+//Route::get('/op_home',[BoshuController::class,'index']);
+
+//Route::resource('boshu',BoshuController::class);
+//Route::post('/boshu',[BoshuController::class,'store']);
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('bbs_user',[Bbs_userController::class,'index']);
-Route::get('/detail/{id}',[Bbs_userController::class,'detail']);
 
 // Route::get('/home', [homeController::class, 'index'])->name('home');
 Route::get('/detail',[detailController::class, 'index'])->name('detail');
@@ -73,9 +83,10 @@ Route::get('/deci/{user_id}/{created_at}',[deciController::class,'info'])->name(
 // Route::get('/detail/{id}',[Bbs_userController::class,'detail']);
 Route::post('points/{user_id}/{join_id}', [PointController::class, 'store'])->name('point.store');
 Route::get('/Userjoin/{id}',[UserjoinController::class,'index'])->name('userjoin.index');
-Route::get('/Userjoin2/',[UserjoinController::class,'store'])->name('userjoin.store');
+Route::post('/Userjoin2',[UserjoinController::class,'store'])->name('userjoin.store');
 Route::resource('userinfo',UserinfoController::class);
 Route::get('/Userjoi',[UserjoinController::class,'usershow'])->name('userjoin.usershow');
+
 
 
 

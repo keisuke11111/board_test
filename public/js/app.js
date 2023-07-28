@@ -5192,13 +5192,6 @@ __webpack_require__.r(__webpack_exports__);
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
 
-//  window.Echo.channel('telun')
-//          .listen('Joined', (e) => {
-//              //console.log(e);
-//              $("#name").append('<li>' +e.join.name + '</li>');
-//              //console.log('Event received:', e);
-//          });
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -5231,7 +5224,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  //key: process.env.MIX_PUSHER_APP_KEY,
   key: "bb9bed52a6c2e38fc2b2",
   cluster: "ap3",
   forceTLS: true

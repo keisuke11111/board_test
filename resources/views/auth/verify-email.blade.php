@@ -27,11 +27,7 @@
                 </div>
             </form>
 
-<<<<<<< HEAD
-            <form method="POST" action="{{ route('logout') }}">
-=======
             <form method="POST" action="{{ route('user.logout') }}">
->>>>>>> 2bd6d2f6e08b12142d5a4f8fc6f83bc75a8e70f5
                 @csrf
 
                 <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">

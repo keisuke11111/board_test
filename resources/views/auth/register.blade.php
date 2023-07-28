@@ -1,7 +1,6 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
@@ -10,7 +9,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('user.register') }}">
+        <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <!-- Name -->
@@ -19,18 +18,6 @@
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
-<
-            <div>
-                <x-label for="tell" :value="__('電話番号')" />
-
-                <x-input id="tell" class="block mt-1 w-full" type="text" name="tell" :value="old('tell')" required autofocus />
-            </div>
-            <div>
-                <x-label for="sex" :value="__('性別')" />
-
-                <x-input id="sex" class="block mt-1 w-full" type="sex" name="sex" :value="old('sex')" required autofocus />
-            </div>
-
 
             <!-- Email Address -->
             <div class="mt-4">
@@ -59,7 +46,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('user.login') }}">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 

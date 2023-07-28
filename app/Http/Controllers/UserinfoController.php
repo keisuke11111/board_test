@@ -54,7 +54,8 @@ class UserinfoController extends Controller
     public function show($id)
     {
         //
-        $rec_po=Point::where('user_id','=',$id)->get('point');
+        $rec_po=Point::where('user_id','=',$id)->get();
+        return view ('history',compact('rec_po'));
 
 
         

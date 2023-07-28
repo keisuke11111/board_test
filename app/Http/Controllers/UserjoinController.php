@@ -13,19 +13,22 @@ class UserjoinController extends Controller
 {
     //
     public function index($id){
+    
 
         $join_op=Recruit::where('id','=',$id)->value('title');
         session()->start();
         session()->put('op_id', $id);
         session()->save();
         $messages=Messages2::where('op_id','=',$id)->get();
+        $speak_id=Messages2::where('op_id','=',$id)->value('speak_id');
+
     
 
-           return view('chat',compact('join_op','id','messages'));
+           return view('chat',compact('join_op','id','messages','speak_id'));
     }
     public function store(Request $request){
-
         $joinId = session()->put('op_id',3);
+        $user = Auth('users')->user()->id;
      
         $id=$request->input(['id']);
         $title=Recruit::where('id','=',$id)->value('title');
@@ -34,6 +37,7 @@ class UserjoinController extends Controller
         $message2->op_id = $request->input(['id']);
         $message2->title = $title;
         $message2->message = $request->input(['message']);
+        $message2->speak_id =$user;
         $message2->save();
         
         event(new MessageCreated($message2));
@@ -47,7 +51,7 @@ class UserjoinController extends Controller
         $user_info = Auth::user();
     
     
-        $user= $user_info->id;
+       
         
 
         if (empty($user_info)) {
@@ -56,6 +60,7 @@ class UserjoinController extends Controller
              return redirect()->route('user.login');
 
          }else{
+            $user= $user_info->id;
              $user_info=User::where('id','=',$user)->get();
 
              return view('user_info',compact('user_info'));

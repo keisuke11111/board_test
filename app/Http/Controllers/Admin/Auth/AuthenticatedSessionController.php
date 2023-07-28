@@ -23,14 +23,10 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-        $recruits=Recruit::all();
-        //session(['recruits' => $recruits]);
-       // return redirect()->intended(RouteServiceProvider::ADMIN_HOME,$recruits);
-       // return redirect('/admin?recruits=' . urlencode(json_encode($recruits)));
-       $user = Auth('admins')->user()->id;
-       $recruits=Recruit::where('op_id',$user )->get();
-       return view('op_home',compact('recruits'));
-       //return redirect('/admin');
+
+       return redirect()->intended(RouteServiceProvider::ADMIN_HOME);
+    //    $recruits=Recruit::all();
+    //    return view('op_home',compact('recruits'));
        
     }
 
@@ -42,7 +38,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/admin');
+        return redirect('/');
     }
 }
 // namespace App\Http\Controllers\Auth;
